@@ -1,14 +1,115 @@
 :root {
-  --primary: #31b0c7;
-  --bg: #77b4cc;
+  --primary: #47cee2;
+  --bg: #b1cbcc;
 }
 
 * {
-  font-family: "poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
   border: none;
-  background: #10d6d6;
+  text-decoration: none;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgb(64, 151, 192);
+  border-bottom: 1px solid #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* logo */
+.logo-ketupat {
+  display: flex;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #000000;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid #ffffff;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0, 0, 5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #000000;
+}
+
+/* Responsive */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #hamburger-menu {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgb(44, 42, 42);
+    width: 30rem;
+    height: 100vh;
+  }
+}
+
+.navbar .navbar-nav.active {
+  right: 0;
+}
+/* Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* phone */
+@media (max-width: 341px) {
+  html {
+    font-size: 35%;
+  }
 }
